@@ -20,7 +20,7 @@ const REPORT_TYPES = [
 export default function ReportForm() {
   const { toast } = useToast();
   const [attachments, setAttachments] = useState([]);
-  
+
   const form = useForm({
     defaultValues: {
       type: "",
@@ -35,16 +35,30 @@ export default function ReportForm() {
     const user = storage.getCurrentUser();
     if (!user) return;
 
+    // Process attachments - store only necessary info
+    const processedAttachments = attachments.map(file => ({
+      name: file.name,
+      type: file.type
+    }));
+
     const report = {
       id: nanoid(),
       userId: user.id,
       status: "submitted",
-      attachments,
+      attachments: processedAttachments,
       createdAt: new Date().toISOString(),
       ...data
     };
 
     storage.saveReport(report);
+
+    // Clean up any preview URLs
+    attachments.forEach(file => {
+      if (file.preview) {
+        URL.revokeObjectURL(file.preview);
+      }
+    });
+
     toast({
       title: "Report submitted successfully",
       description: "You can track its status in your dashboard",

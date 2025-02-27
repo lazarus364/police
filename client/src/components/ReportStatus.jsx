@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Paperclip, Video } from "lucide-react";
 
 const STATUS_COLORS = {
   submitted: "bg-blue-500",
@@ -29,12 +30,24 @@ export default function ReportStatus({ report }) {
         <p className="text-sm">{report.description}</p>
       </ScrollArea>
 
-      {report.attachments.length > 0 && (
+      {report.attachments?.length > 0 && (
         <div className="mt-4">
           <p className="text-sm font-medium">Attachments:</p>
           <ul className="text-sm text-muted-foreground">
             {report.attachments.map((file, i) => (
-              <li key={i}>{file}</li>
+              <li key={i} className="flex items-center gap-2">
+                {file.type?.startsWith('video/') ? (
+                  <>
+                    <Video className="h-4 w-4" />
+                    <span>{file.name} (Video)</span>
+                  </>
+                ) : (
+                  <>
+                    <Paperclip className="h-4 w-4" />
+                    <span>{file.name}</span>
+                  </>
+                )}
+              </li>
             ))}
           </ul>
         </div>
