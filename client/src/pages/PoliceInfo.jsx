@@ -10,7 +10,7 @@ export default function PoliceInfo() {
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <div>
           <img
-            src="https://images.unsplash.com/photo-1557081999-0ea3e23579d2"
+            src="https://static.ntvkenya.co.ke/uploads/2023/11/Police-car-1320x740.png"
             alt="Police Department Building"
             className="rounded-lg shadow-lg w-full h-[300px] object-cover"
           />
@@ -27,7 +27,7 @@ export default function PoliceInfo() {
               <Phone className="h-5 w-5 text-red-500" />
               <div>
                 <p className="font-medium">Emergency</p>
-                <p className="text-lg">911</p>
+                <p className="text-lg">999</p>
               </div>
             </div>
 
@@ -35,7 +35,7 @@ export default function PoliceInfo() {
               <Phone className="h-5 w-5 text-blue-500" />
               <div>
                 <p className="font-medium">Non-Emergency</p>
-                <p className="text-lg">(555) 123-4567</p>
+                <p className="text-lg">(+254) 800-720002</p>
               </div>
             </div>
 
@@ -43,7 +43,7 @@ export default function PoliceInfo() {
               <Mail className="h-5 w-5" />
               <div>
                 <p className="font-medium">Email</p>
-                <p>info@policedepartment.gov</p>
+                <p>nps@nationalpolice.go.ke</p>
               </div>
             </div>
           </div>
@@ -60,8 +60,8 @@ export default function PoliceInfo() {
           <div className="space-y-4">
             <div>
               <p className="font-medium">Main Headquarters</p>
-              <p>123 Police Plaza</p>
-              <p>City, State 12345</p>
+              <p>Vigilance House, Harambee Road</p>
+              <p>CBD, Nairobi</p>
             </div>
 
             <div className="flex items-center gap-3">
@@ -84,7 +84,7 @@ export default function PoliceInfo() {
 
           <div className="space-y-4">
             <div>
-              <h3 className="font-medium mb-2">When to Call 911</h3>
+              <h3 className="font-medium mb-2">When to Call 999</h3>
               <ul className="list-disc list-inside space-y-1 text-sm">
                 <li>Immediate danger to life or property</li>
                 <li>Crime in progress</li>
@@ -108,7 +108,7 @@ export default function PoliceInfo() {
 
       <div className="rounded-lg overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1544993570-05e1f210815a"
+          src="https://www.npsc.go.ke/wp-content/uploads/2025/01/NPS.png"
           alt="Police Officers"
           className="w-full h-[300px] object-cover"
         />
