@@ -2,8 +2,30 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { AlertTriangle, FileText, Shield } from "lucide-react";
+import { useLocation } from "wouter";
 
 export default function Home() {
+
+  // const [, setLocation] = useLocation();
+  // const user = storage.getCurrentUser(); // Get the current logged-in user
+  // const reports = storage.getReports(); // Assuming reports are stored here
+
+  // // Find the user's report from storage
+  // const userReport = user ? reports.find((report) => report.userId === user.id) : null;
+  
+  // const [, setLocation] = useLocation();  // Set up the location hook for navigation
+
+  // const handleViewReports = () => {
+  //   setLocation("/admin-dashboard");  // Navigate to the Admin Dashboard page
+  // };
+
+  const [, setLocation] = useLocation();
+
+  const handleViewReports = () => {
+    const reportId = "submitted"; // Replace with dynamic report status or ID
+    setLocation(`/report-status/${reportId}`); // Navigate to ReportStatus component
+  };
+
   return (
     <div className="max-w-5xl mx-auto">
       <div className="text-center mb-12">
@@ -33,10 +55,16 @@ export default function Home() {
           <p className="text-muted-foreground mb-4">
             Monitor the progress of your submitted reports
           </p>
-          <Link href="/login">
+          {/* <Link href="/login">
             <Button variant="outline" className="w-full">View Reports</Button>
-          </Link>
+          </Link> */}
+          <Button variant="outline" className="w-full" onClick={handleViewReports}>
+            View Reports
+          </Button>
+       
         </Card>
+
+      
 
         <Card className="p-6 text-center">
           <Shield className="mx-auto h-12 w-12 mb-4 text-green-500" />
@@ -49,6 +77,8 @@ export default function Home() {
           </Link>
         </Card>
       </div>
+
+       
 
       <div className="text-center mb-8">
   <h2 className="text-2xl font-semibold mb-6">What Our Users Are Saying</h2>
