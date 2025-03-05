@@ -79,4 +79,11 @@ export default defineConfig({
     }
   },
   
+  server: {
+    proxy: {
+      "/api": "http://localhost:5000",  // Adjust if your backend runs on a different port
+    }
+  }
+  
+
 });
