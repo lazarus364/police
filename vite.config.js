@@ -72,10 +72,11 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
-    outDir: path.resolve(__dirname, "dist/public"),
+    outDir: path.resolve(__dirname, "dist"),  // Remove "public" from path
     emptyOutDir: true,
     rollupOptions: {
-      input: path.resolve(__dirname, "client", "src", "main.jsx"), // Explicit entry point
-    },
+      input: path.resolve(__dirname, "client", "src", "main.jsx"),
+    }
   },
+  
 });
